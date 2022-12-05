@@ -35,17 +35,16 @@
 
         app.post('/pokemon/insert', jsonParser, (req, res) => {
             const body = req.body;
-            const dbConnect = dbo.getDb();
             console.log('Got body:', body);
+            
+            input = {"name":name,};
+            const dbConnect = dbo.getDb();
             var name = body.name
             dbConnect
-                .collection("list")
-                .insertOne({
-                    name:name
-                })
-            //on code ensuite l'insertion dans mongoDB, lisez la doc hehe !!
-            res.json("A bien étais ajouté");
-        
+            .collection("list")
+            .insertOne({ name:name})
+
+            res.json("ok");
         });
         /*
         Bref lisez la doc, 
