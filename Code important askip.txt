@@ -1,0 +1,1 @@
+mongodb+srv://Gvbmaster:<password>@cluster0.wyeljsm.mongodb.net/?retryWrites=true&w=majority
