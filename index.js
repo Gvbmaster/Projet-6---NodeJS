@@ -37,8 +37,13 @@
             const body = req.body;
             console.log('Got body:', body);
             //on code ensuite l'insertion dans mongoDB, lisez la doc hehe !!
+            const dbconnect = dbo.getDb ();
 
-            res.json(body);
+            dbConnect
+                .collection("list")
+                .insert({ name:req.body.name})
+
+            res.json(req.body.name);
         });
         /*
         Bref lisez la doc, 
