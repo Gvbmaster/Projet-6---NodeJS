@@ -16,7 +16,7 @@ module.exports = {
       }
       
       //remplacer whatever par le nom de votre DB !
-      dbConnection = db.db("pokemon");
+      dbConnection = db.db("pokemon","pokedex");
       console.log("Successfully connected to MongoDB.");
     });
     
