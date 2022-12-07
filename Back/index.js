@@ -1,7 +1,7 @@
     const express = require("express");
     const bodyParser= require('body-parser');
     const jsonParser = bodyParser.json();
-    const dbo = require("./db/db");
+    const dbo = require("./Back/db/db");
     const app = express();
     const port = 4444;
 
