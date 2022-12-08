@@ -18,7 +18,7 @@ function Home(props){
 
     return <>
         <Nav />
-        <FirstTitle />
+        <FirstTitle  />
         <div className="pokemon-list">
             <div class="flex">
             {
