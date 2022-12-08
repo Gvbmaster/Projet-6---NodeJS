@@ -1,5 +1,5 @@
 function FirstTitle(props){
-    return <h1>Accueil</h1>;
+    return <h1>Dashboard</h1>;
 }
 
 export default FirstTitle;
