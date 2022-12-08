@@ -1,8 +1,10 @@
+    var cors = require('cors');
     const express = require("express");
     const bodyParser= require('body-parser');
     const jsonParser = bodyParser.json();
     const dbo = require("./db/db");
     const app = express();
+    app.use(cors());
     const port = 4444;
 
     dbo.connectToServer();
@@ -140,7 +142,7 @@
     });
     
     //insert pokedex
-    app.post('/pokedex/insertPokedex', jsonParser, (req, res) => {
+    app.post('/pokemon/insertPokedex', jsonParser, (req, res) => {
         const body = req.body;
         const dbConnect = dbo.getDb();
         dbConnect

@@ -8,6 +8,6 @@ export const getAll = async () => {
             }
         }
     )
-    const pokemons = await response.json()
-    return pokemons
+    const Pokemon = await response.json()
+    return Pokemon
 }
