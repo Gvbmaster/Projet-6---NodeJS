@@ -1,12 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
+//App.js
+function App(props){
+  return <Router>
       <Switch>
-        <Route exact path="/"> //ici on met l'URL dans le navigateur
-          <Home /> //ici on donne la page à afficher en fonction de cette URL
+        <Route exact path="/"> {/*ici on met l'URL dans le navigateur*/}
+          <Home /> {/*ici on donne la page à afficher en fonction de cette URL*/}
         </Route>
         <Route path="/about">
           <About />
@@ -15,10 +21,6 @@ function App() {
           <Dashboard />
         </Route>
       </Switch>
-    </Router>
-
-  );
+  </Router>
 }
-
-
 export default App;
