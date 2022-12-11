@@ -5,7 +5,7 @@ import { getAll } from "../api/pokemon";
 
 
 function Home(props){
-    const [ Pokemon, setPokemon ] = useState([]);
+    const [ pokemon, setPokemon ] = useState([]);
 
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
@@ -18,13 +18,13 @@ function Home(props){
 
     return <>
         <Nav />
-        <FirstTitle  />
+        <FirstTitle/>
         <div className="pokemon-list">
             <div class="flex">
             {
-                Pokemon.map((pokemon,key) =>{
+                pokemon.map((pokemon,key) =>{
                     return <div key={key} className="bloc-pokemon">
-                    <h2>{Pokemon.list}</h2>
+                    <h2>{pokemon.list}</h2>
                 </div>
                 })
             }
