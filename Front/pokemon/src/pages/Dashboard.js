@@ -2,6 +2,7 @@ import Nav from "../component/Nav"
 import FirstTitle from "../component/h1-2"
 import { useEffect, useState } from "react";
 import { getAllPokedex } from "../api/Pokedex";
+import { deletePokedex } from "../api/DeletePokedex";
 
 function Dashboard(props){
     //va s'executer seulement au lancement du composant (dep: [])
@@ -25,7 +26,9 @@ function Dashboard(props){
             pokemon.map((pokemon,key) =>{
                 return <div key={key} className="bloc-pokemon">
                     <h2>{pokemon.name}</h2>
+                    <img src={pokemon.img} alt=""/>
                     <p>{pokemon.type}</p>
+                    <button onClick={()=>deletePokedex(pokemon)}>relachez !</button>
                 
             </div>
             })

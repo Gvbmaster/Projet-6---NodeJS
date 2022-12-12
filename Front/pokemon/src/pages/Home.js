@@ -29,6 +29,7 @@ function Home(props){
             pokemon.map((pokemon,key) =>{
                 return <div key={key} className="bloc-pokemon">
                     <h2>{pokemon.name}</h2>
+                    <img src={pokemon.img} alt=""/>
                     <p>{pokemon.type}</p>
                     <button onClick={()=>getInPokedex(pokemon)}>Capturer !</button>
                 <ul>

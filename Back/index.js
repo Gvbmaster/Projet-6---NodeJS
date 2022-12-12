@@ -28,13 +28,6 @@
         });
        
     });
-
-    const callBackCustom = (err, res)  =>{
-        if (err) {
-            res.status(400).send("Err.message!");
-        }{}
-        res.json(res);
-    };
     
     app.post('/pokemon/insert', jsonParser, (req, res) => {
         const body = req.body;
@@ -42,7 +35,13 @@
         dbConnect
         .collection("list")
         .insertOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
         
         res.json("ok bg");
     });
@@ -57,7 +56,13 @@
         dbConnect
         .collection("list")
         .deleteOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
 
         res.json("ciao beaugosse");
     });
@@ -74,7 +79,13 @@
                 name: body.newname
             }
         })
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
 
         res.json("c bon beaugosse");
     });
@@ -84,7 +95,13 @@
         dbConnect
         .collection("type")
         .find({})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
     });
 
     app.post('/pokemon/insertType', jsonParser, (req, res) => {
@@ -93,7 +110,13 @@
         dbConnect
         .collection("type")
         .insertOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
 
         res.json("ok bg");
     });
@@ -104,7 +127,13 @@
         dbConnect
         .collection("type")
         .deleteOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
 
         res.json("ciao beaugosse");
     });
@@ -121,9 +150,13 @@
                 name: body.newname
             }
         })
-        .then(callBackCustom)
-
-        res.json("c bon beaugosse");
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
     });
 
 // pokedex
@@ -150,7 +183,13 @@
         dbConnect
         .collection("pokedex")
         .insertOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
         
         res.json("oki bgl");
     });
@@ -162,7 +201,13 @@
         dbConnect
         .collection("pokedex")
         .deleteOne({...body})
-        .then(callBackCustom)
+        .toArray(function (err, result) {
+            if (err) {
+            res.status(400).send("Error fetching pokemons!");
+            } else {
+            res.json(result);
+            }
+        });
 
         res.json("ciaoooo beaugosse");
     });
