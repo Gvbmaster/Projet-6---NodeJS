@@ -25,6 +25,7 @@ function Dashboard(props){
             pokemon.map((pokemon,key) =>{
                 return <div key={key} className="bloc-pokemon">
                     <h2>{pokemon.name}</h2>
+                    <p>{pokemon.type}</p>
                 
             </div>
             })

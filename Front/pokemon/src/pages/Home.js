@@ -30,7 +30,7 @@ function Home(props){
                 return <div key={key} className="bloc-pokemon">
                     <h2>{pokemon.name}</h2>
                     <p>{pokemon.type}</p>
-                    <button onClick={()=>getInPokedex(pokemon._id, pokemon.name, pokemon.type)}>Capturer !</button>
+                    <button onClick={()=>getInPokedex(pokemon)}>Capturer !</button>
                 <ul>
                     
                 </ul>

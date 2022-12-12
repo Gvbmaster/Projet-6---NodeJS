@@ -128,13 +128,20 @@
 
 // pokedex
  //list pokedex
- app.get("/pokemon/listPokedex", function (req, res) {
+ app.get("/pokemon/PokedexList", function (req, res) {
     const dbConnect = dbo.getDb();
     dbConnect
     .collection("pokedex")
     .find({})
-    .then(callBackCustom)
+    .toArray(function (err, result) {
+        if (err) {
+        res.status(400).send("Error fetching pokemons!");
+        } else {
+        res.json(result);
+        }
     });
+   
+});
     
     //insert pokedex
     app.post('/pokemon/insertPokedex', jsonParser, (req, res) => {
