@@ -5,10 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(img/pokemon.jpg) ;
+  background-image: url(img/background2.jpg) ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+}
+.nav{
+  margin-top:0px ;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.nav ul{
+  margin-top: 0px;
+  display: flex;
+  top: 0px;
+  justify-content: space-evenly;
+  font-size: 25px;
+  list-style-type: none;
+  text-decoration-line: none;
+  margin-right: 60px;
+}
+
+.nav ul li{
+  padding: 10%;
+  background-color: burlywood;
+  text-decoration: none;
+}
+
+.h1{
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  color: black;
+
+}
+
+.pokemon-list h1{
+  font-size:100px;
+  display: flex;
+  justify-content: center;
+}
+.pokemon-list .flex{
+  background-color: burlywood;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  justify-content: space-evenly;
 
 }
 

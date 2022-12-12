@@ -1,5 +1,7 @@
 function FirstTitle(props){
-    return <h1>Accueil</h1>;
+    return <div className = 'h1'> 
+    <h1>Accueil</h1>
+    </div>
 }
 
 export default FirstTitle;
