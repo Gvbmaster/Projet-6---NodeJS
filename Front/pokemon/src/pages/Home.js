@@ -1,7 +1,8 @@
 import Nav from "../component/Nav"
 import FirstTitle from "../component/h1"
 import { useEffect, useState } from "react";
-import { getAll } from "../api/pokemon";
+import { getAll } from "../api/Pokemon";
+import {getInPokedex} from "../api/AddToPokedex";
 
 
 function Home(props){
@@ -19,27 +20,20 @@ function Home(props){
         .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[]);
     return <>
-    <Nav />
-    <FirstTitle />
+    <Nav/>
+    <FirstTitle/>
     <div className="pokemon-list">
         <h1>Liste des pokemons</h1>
-        <div class="flex">
+        <div className="flex">
         {
-            pokemon.map((list,key) =>{
+            pokemon.map((pokemon,key) =>{
                 return <div key={key} className="bloc-pokemon">
-                {/* <img className="avatar" src={pokemon.img} /> /}
-                <div class="pokemonCard">
-                <div class="number">
-                <h2>{pokemonName.number}</h2>
-                </div>
-                <div class="name">
-                <p>{pokemonName.name}</p>
-                </div>
-                <div class="type">
-                <p>{pokemonName.type}</p>
-                </div>
-                </div>
-            {/ <button onClick={()=>addToPokedex(pokemon._id)}>Capturer !</button> */}
+                    <h2>{pokemon.name}</h2>
+                    <p>{pokemon.type}</p>
+                    <button onClick={()=>getInPokedex(pokemon._id)}>Capturer !</button>
+                <ul>
+                    
+                </ul>
             </div>
             })
         }

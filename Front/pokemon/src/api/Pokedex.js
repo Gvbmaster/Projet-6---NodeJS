@@ -1,7 +1,7 @@
-export const getInPokedex = async () => {
+export const getAllPokedex = async () => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/insertPokedex', {
-            method: 'POST', 
+        'http://localhost:4444/pokemon/listPokedex', {
+            method: 'GET', 
             headers: {
                 'Accept': 'application/json', 
                 'Content-Type':'application/json'

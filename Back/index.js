@@ -29,11 +29,11 @@
        
     });
 
-    const callBackCustom = (err, result)  =>{
+    const callBackCustom = (err, res)  =>{
         if (err) {
             res.status(400).send("Err.message!");
         }{}
-        res.json(result);
+        res.json(res);
     };
     
     app.post('/pokemon/insert', jsonParser, (req, res) => {
@@ -60,7 +60,7 @@
         .then(callBackCustom)
 
         res.json("ciao beaugosse");
-    })
+    });
 
     app.post('/pokemon/update', jsonParser, (req, res) =>{
         const body = req.body;
@@ -77,7 +77,7 @@
         .then(callBackCustom)
 
         res.json("c bon beaugosse");
-    })
+    });
 
     app.get("/pokemon/listType", function (req, res) {
         const dbConnect = dbo.getDb();
@@ -107,7 +107,7 @@
         .then(callBackCustom)
 
         res.json("ciao beaugosse");
-    })
+    });
 
     app.post('/pokemon/updateType', jsonParser, (req, res) =>{
         const body = req.body;
@@ -124,7 +124,7 @@
         .then(callBackCustom)
 
         res.json("c bon beaugosse");
-    })
+    });
 
 // pokedex
  //list pokedex
@@ -133,12 +133,7 @@
     dbConnect
     .collection("pokedex")
     .find({})
-    .toArray(function (err, result) {
-        if (err) {
-        res.status(400).send("Error fetching pokemons!");
-        } else {
-        res.json(result);
-        }
+    .then(callBackCustom)
     });
     
     //insert pokedex
@@ -164,4 +159,3 @@
 
         res.json("ciaoooo beaugosse");
     });
-});
