@@ -11,4 +11,5 @@ export const getAll = async (data) => {
     )
     const pokemon = await response.json()
     return pokemon
+    
 }
