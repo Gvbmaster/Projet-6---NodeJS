@@ -19,7 +19,7 @@ function Dashboard(props){
     return <>
     <Nav/>
     <FirstTitle/>
-    <div className="pokemon-pokedex">
+    <div className="pokemon-list">
         <h1>Liste des pokemons dans pokedex</h1>
         <div className="flex">
         {

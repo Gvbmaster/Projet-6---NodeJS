@@ -6,6 +6,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //App.js
 function App(props){
@@ -14,11 +16,11 @@ function App(props){
         <Route exact path="/"> 
           <Home /> 
         </Route>
-        <Route path="/about">
-          <About />
-        </Route>
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
   </Router>

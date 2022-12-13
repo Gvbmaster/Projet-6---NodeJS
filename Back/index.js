@@ -50,7 +50,7 @@
         console.log(`App listening on port ${port}!`);
     });
     
-    app.post('/pokemon/delete', jsonParser, (req, res) =>{
+    app.delete('/pokemon/delete', jsonParser, (req, res) =>{
         const body = req.body;
         const dbConnect = dbo.getDb();
         dbConnect
@@ -121,7 +121,7 @@
         res.json("ok bg");
     });
 
-    app.post('/pokemon/deleteType', jsonParser, (req, res) =>{
+    app.delete('/pokemon/deleteType', jsonParser, (req, res) =>{
         const body = req.body;
         const dbConnect = dbo.getDb();
         dbConnect

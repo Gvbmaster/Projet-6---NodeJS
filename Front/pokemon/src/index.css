@@ -7,15 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(img/background2.jpg) ;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 119%;
   background-position: center;
 
 }
 .nav{
   margin-top:0px ;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   
+}
+.nav a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
 }
 .nav ul{
   margin-top: 0px;
@@ -26,6 +32,7 @@ body {
   list-style-type: none;
   text-decoration-line: none;
   margin-right: 60px;
+  list-style: none;
 }
 
 .nav ul li{
