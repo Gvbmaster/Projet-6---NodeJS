@@ -56,7 +56,7 @@
         dbConnect
         .collection("list")
         .deleteOne({...body})
-        .toArray(function (err, result) {
+        .then(function (err, result) {
             if (err) {
             res.status(400).send("Error fetching pokemons!");
             } else {

@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
+import Update from "./pages/Update";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +22,9 @@ function App(props){
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/Update/:id">
+          <Update />
         </Route>
       </Switch>
   </Router>

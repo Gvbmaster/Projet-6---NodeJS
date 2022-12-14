@@ -10,6 +10,8 @@ import {updatePokemon} from "../api/UpdatePokemon";
 import { AllType } from "../api/Type";
 import {getInPokemon} from "../api/AddPokemon";
 import {useForm} from "react-hook-form";
+import { Link } from "react-router-dom";
+
 
 function About(props){
     const [show, setShow] = useState(false);
@@ -17,14 +19,13 @@ function About(props){
     const handleShow = () => setShow(true);
     const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
-        const res = await getInPokemon(data);
-        if(res.acknowledged){
-            console.log(data)
-        }
+        await getInPokemon(data);
+            console.log(data);
     }
     //va s'executer seulement au lancement du composant (dep: [])
     const [ pokemon, setPokemon ] = useState([]);
     const [ types, setTypes ] = useState([]);
+    
     useEffect(() => {
       // récupérer la liste des pokemons seulement au chargement du composant ! 
     const pokemonFetched = getAll();
@@ -35,6 +36,9 @@ function About(props){
     typesFetched
         .then(result => setTypes(result))
         .catch(error=>console.error("Erreur avec notre API :",error.message));
+    
+      
+
     },[]);
     return <>
     <Nav/>
@@ -53,7 +57,7 @@ function About(props){
               <Form.Label><input {...register("name")} placeholder="Entrer le nom du pokemon" /></Form.Label>
             </Form.Group>
               <Form.Label><input {...register("img")} placeholder="Entrer l'url de l'image du pokemon'" /></Form.Label>
-            <Form.Select {...register("type[]")} aria-label="Default select example">
+            <Form.Select  {...register("type[]")} aria-label="Default select example"multiple>
                 {
                     types.map(type=><option value={type.type}>{type.type}</option>)
                 }
@@ -73,10 +77,8 @@ function About(props){
                 return <div key={key} className="bloc-pokemon">
                     <img src={pokemon.img} alt=""/>
                     <h2>{pokemon.name}</h2>
-
-                    <textarea className="update" placeholder="Modifier le nom"></textarea> 
-                    <button onClick={()=>updatePokemon(pokemon)}>Modifier !</button>
                     <p>{pokemon.type}</p>
+                    <Link to={"/Update/"+pokemon._id}><button onClick={()=>updatePokemon(pokemon)}>Modifier !</button></Link>
                     <button onClick={()=>deletePokemon(pokemon)}>Supprimer !</button>
                 <ul>
                     
