@@ -1,13 +1,13 @@
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Dashboard from "./pages/Dashboard";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Pokedex from "./pages/Pokedex";
+import Pokemon from "./pages/Pokemon";
 import Update from "./pages/Update";
+import Gestion from './pages/Gestion';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //App.js
@@ -15,16 +15,16 @@ function App(props){
   return <Router>
       <Switch>
         <Route exact path="/"> 
-          <Home /> 
+          <Pokemon/> 
         </Route>
-        <Route path="/dashboard">
-          <Dashboard />
+        <Route path="/pokedex">
+          <Pokedex/>
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/gestion">
+          <Gestion/>
         </Route>
-        <Route path="/Update/:id">
-          <Update />
+        <Route path="/update/:id">
+          <Update/>
         </Route>
       </Switch>
   </Router>

@@ -50,24 +50,26 @@
         console.log(`App listening on port ${port}!`);
     });
     
-    app.delete('/pokemon/delete', jsonParser, (req, res) =>{
+    app.post('/pokemon/delete', jsonParser, (req, res) =>{
         const body = req.body;
         const dbConnect = dbo.getDb();
+        const doc = {
+            name:body.name
+        };
         dbConnect
-        .collection("list")
-        .deleteOne({...body})
-        .then(function (err, result) {
-            if (err) {
-            res.status(400).send("Error fetching pokemons!");
-            } else {
-            res.json(result);
-            }
+            .collection("list")
+            .deleteOne(doc)
+            .then(function (result,err) {
+                if (err) {
+                    res.status(400).send("ok");
+                }else{
+                    res.json(result)
+                }
+            })
         });
 
-        res.json("ciao beaugosse");
-    });
 
-    app.post('/pokemon/update', jsonParser, (req, res) =>{
+    app.post('/pokemon/updatePokemon', jsonParser, (req, res) =>{
         const body = req.body;
         const dbConnect = dbo.getDb();
         dbConnect
@@ -121,7 +123,7 @@
         res.json("ok bg");
     });
 
-    app.delete('/pokemon/deleteType', jsonParser, (req, res) =>{
+    app.post('/pokemon/deleteType', jsonParser, (req, res) =>{
         const body = req.body;
         const dbConnect = dbo.getDb();
         dbConnect

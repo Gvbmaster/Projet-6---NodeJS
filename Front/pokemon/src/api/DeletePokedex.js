@@ -6,7 +6,7 @@ export const deletePokedex = async (pokemon) => {
                 'Accept': 'application/json', 
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify(pokemon)
+            body:JSON.stringify(pokemon)
         }
     )
     const pokemons = await response.json()

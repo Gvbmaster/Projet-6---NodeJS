@@ -6,14 +6,13 @@ import Modal from 'react-bootstrap/Modal';
 import { useEffect, useState } from "react";
 import { getAll } from "../api/Pokemon";
 import {deletePokemon} from "../api/DeletePokemon";
-import {updatePokemon} from "../api/UpdatePokemon";
 import { AllType } from "../api/Type";
 import {getInPokemon} from "../api/AddPokemon";
 import {useForm} from "react-hook-form";
 import { Link } from "react-router-dom";
 
 
-function About(props){
+function Gestion(props){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -78,7 +77,7 @@ function About(props){
                     <img src={pokemon.img} alt=""/>
                     <h2>{pokemon.name}</h2>
                     <p>{pokemon.type}</p>
-                    <Link to={"/Update/"+pokemon._id}><button onClick={()=>updatePokemon(pokemon)}>Modifier !</button></Link>
+                    <Link class="link" to={"/Update/"+pokemon._id}><div className="btn upcss">Modifier le pokemon !</div></Link>
                     <button onClick={()=>deletePokemon(pokemon)}>Supprimer !</button>
                 <ul>
                     
@@ -94,4 +93,4 @@ function About(props){
 }
 
 
-export default About;
+export default Gestion;

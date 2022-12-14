@@ -1,14 +1,15 @@
-export const updatePokemon = async (pokemon) => {
+export const updatePokemon = async (data) => {
     const response = await fetch(
-        'http://localhost:4444/pokemon/update', {
+        'http://localhost:4444/pokemon/updatePokemon', {
             method: 'POST', 
             headers: {
                 'Accept': 'application/json', 
                 'Content-Type':'application/json'
-            },
-            body: JSON.stringify(pokemon)
+            }, 
+            body: JSON.stringify(data),
         }
     )
-    const pokemons = await response.json()
-    return pokemons
+    const res = await response.json()
+    return res
+
 }
